@@ -16,7 +16,7 @@ class Api::IndexController < ApplicationController
         filteredShows =  Show.has_episodes_and_drm(shows)
         filteredShowsJSON = filteredShows.map { |show| show.to_json }
 
-        render json: {response: filteredShowsJSON }
+        render json: { response: filteredShowsJSON }
 
 
     end

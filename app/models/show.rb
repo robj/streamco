@@ -20,7 +20,7 @@ class Show
 
 
     def self.has_episodes_and_drm(shows)
-        shows.select { |show| show.hasEpisodes? && show.hasDRM? }
+        shows.select { |show| show.has_episodes? && show.has_drm? }
     end
 
 
@@ -38,11 +38,11 @@ class Show
     end
 
 
-    def hasEpisodes?
+    def has_episodes?
         self.episodeCount && (self.episodeCount > 0)
     end
 
-    def hasDRM?
+    def has_drm?
         self.drm
     end
 
