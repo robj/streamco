@@ -13,10 +13,10 @@ class Api::IndexController < ApplicationController
 
         shows = params[:payload].map {|show_params| Show.new(show_params)}
 
-        filteredShows =  Show.has_episodes_and_drm(shows)
-        filteredShowsJSON = filteredShows.map { |show| show.to_json }
+        filtered_shows =  Show.has_episodes_and_drm(shows)
+        filtered_shows_json = filteredShows.map { |show| show.to_json }
 
-        render json: { response: filteredShowsJSON }
+        render json: { response: filtered_shows_json }
 
 
     end
