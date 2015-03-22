@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
     end
 
-  
+  root 'api/index#index'
+  match '/' => 'api/index#create', via: :post
 
 
   # The priority is based upon order of creation: first created -> highest priority.
