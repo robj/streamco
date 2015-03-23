@@ -73,7 +73,7 @@ Run with:
 
 - POST to /shows for each individual show instead of a single bulk POST request ShowsController#create) 
 
-   response: 201 Created, singular show root
+   response: 201 Created, json root: show (singular)
 
    show: { title: 'a', image: 'b', slug: 'c' }
 
@@ -88,7 +88,7 @@ Run with:
  
     GET /shows?episodeCount.gte=1&drm=true 
 
-    response: 200 OK,  plural shows root with array
+    response: 200 OK,  json root: shows (plural) 
 
     shows: [ { title: 'a', image: 'b', slug: 'c' },
              { title: 'd', image: 'e', slug: 'f' } 
