@@ -72,13 +72,17 @@ Run with:
 ### Thoughts on improving the design of the tests API to align with RESTful principles / standardisation ( http://jsonapi.org )
 
 - POST to /shows for each individual show instead of a single bulk POST request ShowsController#create) , return 201 Created, singular show root
+
    show: { title: 'a', image: 'b', slug: 'c' }
+
 - Creating many requests in parallel would probably be more effiecient in a real world scenario with a pool of api servers, is RESTful, and a bad validation of a single show does not invalidate all shows as when posted in bulk.
 - return 422 Unprocessable Entity on validation errrors, more specific than bad request.
 
 - Seperate GET request to get filtered Shows.
 - GET on the show collection with query params 
-    ( GET /shows?episodeCount.gte=1&drm=true )
+ 
+    GET /shows?episodeCount.gte=1&drm=true 
+
     respond with status 200 OK,  plural shows root with array
 
     shows: [ { title: 'a', image: 'b', slug: 'c' },
