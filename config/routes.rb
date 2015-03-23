@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
 
 
-#    namespace :api, defaults: {format: :json} do
-#
-#
-#      resources :index
-#
-#
-#    end
-#
   match '/' => 'show_filters#create', via: :post
   match '/' => 'show_filters#index',  via: :get
 
