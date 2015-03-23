@@ -78,7 +78,10 @@ Run with:
    show: { title: 'a', image: 'b', slug: 'c' }
 
 - Creating many requests in parallel would probably be more effiecient in a real world scenario with a pool of api servers, is RESTful, and a bad validation of a single show does not invalidate all shows as when posted in bulk.
-- return 422 Unprocessable Entity on validation errrors, more specific than bad request.
+- return 422 Unprocessable Entity on validation errrors, more specific than Bad Request.
+
+
+
 
 - Seperate GET request to get filtered Shows.
 - GET on the show collection with query params 
