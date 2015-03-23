@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
 
-    namespace :api, defaults: {format: :json} do
-
-
-      resources :index
-
-
-    end
-
-  root 'api/index#index'
-  match '/' => 'api/index#create', via: :post
+#    namespace :api, defaults: {format: :json} do
+#
+#
+#      resources :index
+#
+#
+#    end
+#
+  match '/' => 'show_filters#create', via: :post
+  match '/' => 'show_filters#index',  via: :get
 
 
   # The priority is based upon order of creation: first created -> highest priority.

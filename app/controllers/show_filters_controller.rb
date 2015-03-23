@@ -1,4 +1,4 @@
-class ShowFilterController < ApplicationController
+class ShowFiltersController < ApplicationController
 
 
     protect_from_forgery :except => :create 
