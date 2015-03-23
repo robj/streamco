@@ -69,7 +69,7 @@ Run with:
 - The example payload
 
 
-### Thoughts on improving the design of the tests API to align with RESTFul principles / standardisation ( http://jsonapi.org )
+### Thoughts on improving the design of the tests API to align with RESTful principles / standardisation ( http://jsonapi.org )
 
 - POST to /shows for each individual show instead of a single bulk POST request ShowsController#create) , return 201 Created, singular show root
    show: { title: 'a', image: 'b', slug: 'c' }
