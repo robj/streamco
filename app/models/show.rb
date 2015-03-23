@@ -35,6 +35,9 @@ class Show
         args.each do |k,v|
           instance_variable_set("@#{k}", v) unless v.nil?
         end
+
+        self.episodeCount = self.episodeCount.to_i if self.episodeCount
+        self.drm = (self.drm == true || self.drm == 'true') 
     end
 
 
