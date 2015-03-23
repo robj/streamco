@@ -41,7 +41,7 @@ Additional gems used
 `/app/models/show.rb`
 
 - In a real world actual application, Shows, Images, Episodes etc. would all be ActiveRecord models with relational associations. For simplification in this challenge, the Show Model is a PORO (Plain Old Ruby Object)
-- Some ActiveRecord features are emulated (initialization with hash, and typecasting to Integer (episodeCount) and Boolean (drm) )
+- Some ActiveRecord features are emulated (initialization with hash, and type casting in cases the model would have had non-String field types. ie. episodeCount (Integer) and drm (Boolean).
 - The Class method 'has_episodes_and_drm' would be the equivalant of a database scope (WHERE query).
 - Also in a real world application the Instance method to_json would better be represented by a Serializer (eg. ActiveModelSerializers) to seperate presentation concerns.
 
