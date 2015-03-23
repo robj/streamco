@@ -71,14 +71,14 @@ Run with:
 
 ## Thoughts on improving the design of the tests API to align with RESTFul principles / standardisation ( http://jsonapi.org )
 
-- POST to /show for every show instead of one POST request ShowsController#create) , return 201 Created and
+- POST to /show for every show instead of one POST request ShowsController#create) , return 201 Created and singular show root
    show: { title: 'a', image: 'b', slug: 'c' }
 - If minimizing req/response is absolutely necessary POST an array of posts to /post_collection (However creating many requests in parrallel would probably be more effiecient in a real world scenario with a pool of api servers and be more RESTful)
 
 - Seperate GET request to get filtered Shows.
 - GET on the show collection with query params 
     ( GET /shows?episodeCount.gte=1&drm=true )
-    respond with status 200, and 
+    respond with status 200, and plural shows root with array
 
     shows: [ { title: 'a', image: 'b', slug: 'c' },
              { title: 'd', image: 'e', slug: 'f' } 
