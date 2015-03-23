@@ -4,6 +4,9 @@ http://streamco-coding-challenge.herokuapp.com/
 
 This challenge was completed with Ruby on Rails.
 
+Also see http://robj.github.io for en example of Test Driven Development of a Versioned, RESTful API
+
+
 ## Application
 
 Run with:
@@ -37,8 +40,7 @@ curb (test broken JSON with raw requests)
 
 `/app/models/show.rb`
 
-- In a real world actual application, Shows, Images, Episodes etc. would all be ActiveRecord models with relational associations. 
-- For simplification in this challenge, the Show Model is a PORO (Plain Old Ruby Object) .. ie  Not database backed.
+- In a real world actual application, Shows, Images, Episodes etc. would all be ActiveRecord models with relational associations. For simplification in this challenge, the Show Model is a PORO (Plain Old Ruby Object)
 - Some ActiveRecord features are emulated (initialization with hash, and typecasting to Integer (episodeCount) and Boolean (drm) )
 - The Class method 'has_episodes_and_drm' would be the equivalant of a database scope (WHERE query).
 - Also in a real world application the Instance method to_json would better be represented by a Serializer (eg. ActiveModelSerializers) to seperate presentation concerns.
