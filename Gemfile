@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 gem 'request_exception_handler'
+gem 'curb'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

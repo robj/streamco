@@ -7,7 +7,9 @@ end
 
 describe "Show integration" do
 
-  it "expected response when POSTed example JSON payload" do 
+    
+
+ it "should have expected response when POSTed example JSON payload" do 
 
         filename = Rails.root.to_s +  '/test/example_payload.json'
         file = File.read(filename)
@@ -25,5 +27,34 @@ describe "Show integration" do
 
 
   end
+
+  it "should return 400 status and error message when POSTed bad data" do
+
+
+        #testing broken JSON requests with curb
+        #https://robots.thoughtbot.com/catching-json-parse-errors-with-custom-middleware
+
+
+        broken_json = '{asdf}'
+        host = 'localhost'
+        port = 3000
+        path = '/'
+
+        curb = Curl.post("http://#{host}:#{port}#{path}", broken_json) do |curl|
+          curl.headers['Accept'] = 'application/json'
+          curl.headers['Content-Type'] = 'application/json'
+        end
+
+
+
+        assert curb.response_code.must_equal 400 #bad_request
+        assert curb.body_str.must_equal '{"error":"Could not decode request: JSON parsing failed"}'
+        assert curb.content_type.must_match /application\/json/
+
+
+
+  end
+
+
 
 end
