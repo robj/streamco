@@ -18,8 +18,8 @@ Run with:
 
 Additional gems used
 
-request_exception_handler (rescue JSON Parsing errors)
-curb (test broken JSON with raw requests)
+- request_exception_handler (rescue JSON Parsing errors)
+- curb (test broken JSON with raw requests)
 
 
 
